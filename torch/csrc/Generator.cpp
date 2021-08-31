@@ -43,9 +43,9 @@ static void THPGenerator_dealloc(PyObject* _self)
   Py_TYPE(_self)->tp_free(_self);
 }
 
-static PyObject * THPGenerator_pynew(PyTypeObject *type, PyObject *args, PyObject *kwargs, PyObject *seed=None)
+static PyObject * THPGenerator_pynew(PyTypeObject *type, PyObject *args, PyObject *kwargs, PyObject *seed=0)
 {
-  if (seed==None)
+  if (seed==0)
   {
   HANDLE_TH_ERRORS
   static torch::PythonArgParser parser({
